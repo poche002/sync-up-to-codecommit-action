@@ -18,4 +18,4 @@ git remote add sync ${CodeCommitUrl}
 git fetch origin ${BranchName}
 
 # Push the specific branch to the CodeCommit repository
-git push sync ${BranchName}:${BranchName}
+git push sync ${BranchName}:${BranchName} --force
