@@ -13,10 +13,12 @@ git config --global credential.UseHttpPath true
 
 # Add the CodeCommit remote repository
 git remote add sync ${CodeCommitUrl}
+
+### Uncomment if you want to push the main branch to the CodeCommit repository
 # Fetch the main branch from the GitHub repository
-git fetch origin main
+# git fetch origin main
 # Push the main branch to the CodeCommit repository
-git push sync main:main
+# git push sync main:main
 
 # Fetch the specific branch from the GitHub repository
 git fetch origin ${BranchName}
