@@ -23,11 +23,9 @@ git remote add sync ${CodeCommitUrl}
 
 # Fetch the specific branch from the GitHub repository
 echo "Fetching the specific branch: ${BranchName}"
+git checkout ${BranchName}
 git fetch origin ${BranchName}
 # Push the specific branch to the CodeCommit repository
 # git fetch sync
-echo "Rebasing the specific branch: ${BranchName}"
-git fetch sync
-git rebase sync/${BranchName}
 echo "Pushing the specific branch into CodeCommit: ${BranchName}"
-git push --force sync ${BranchName}
+git push --force sync ${BranchName}:${BranchName}
