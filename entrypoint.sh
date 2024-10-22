@@ -26,4 +26,4 @@ echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
 # Push the specific branch to the CodeCommit repository
 echo "Pushing the specific branch into CodeCommit: ${BranchName}"
-git push sync ${BranchName}:${BranchName} --force
+git push --force sync ${BranchName}:${BranchName}
