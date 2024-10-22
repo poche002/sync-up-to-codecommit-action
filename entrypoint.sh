@@ -12,6 +12,7 @@ git config --global credential.'https://git-codecommit.*.amazonaws.com'.helper '
 git config --global credential.UseHttpPath true
 
 # Add the CodeCommit remote repository
+echo "Adding the CodeCommit remote repository: ${CodeCommitUrl}"
 git remote add sync ${CodeCommitUrl}
 
 ### Uncomment if you want to push the main branch to the CodeCommit repository
@@ -21,6 +22,8 @@ git remote add sync ${CodeCommitUrl}
 # git push sync main:main
 
 # Fetch the specific branch from the GitHub repository
+echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
 # Push the specific branch to the CodeCommit repository
+echo "Pushing the specific branch into CodeCommit: ${BranchName}"
 git push sync ${BranchName}:${BranchName} --force
