@@ -39,6 +39,10 @@ git pull origin VVVC1-1834-fix-repos-sync
 echo "Listing the last 10 commits on main"
 git rev-list origin/main -n 10
 
+# List last 10 commits on the origin/specific branch
+echo "Listing the last 10 commits on the specific branch: origin/${BranchName}"
+git rev-list origin/VVVC1-1834-fix-repos-sync -n 10
+
 # List last 10 commits on the specific branch
 echo "Listing the last 10 commits on the specific branch: ${BranchName}"
 git rev-list VVVC1-1834-fix-repos-sync -n 10
