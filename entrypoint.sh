@@ -29,6 +29,7 @@ git fetch origin main
 echo "Fetching the specific branch: ${BranchName}"
 git fetch origin VVVC1-1834-fix-repos-sync
 git checkout VVVC1-1834-fix-repos-sync
+git pull origin VVVC1-1834-fix-repos-sync
 
 # Fetch the latest commits from the CodeCommit repository
 #echo "Fetching the latest commits from the CodeCommit repository"
