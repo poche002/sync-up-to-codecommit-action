@@ -12,8 +12,8 @@ git config --global credential.'https://git-codecommit.*.amazonaws.com'.helper '
 git config --global credential.UseHttpPath true
 
 # Add the CodeCommit remote repository
-#echo "Adding the CodeCommit remote repository: ${CodeCommitUrl}"
-#git remote add sync ${CodeCommitUrl}
+echo "Adding the CodeCommit remote repository: ${CodeCommitUrl}"
+git remote add sync ${CodeCommitUrl}
 
 ### Uncomment if you want to push the main branch to the CodeCommit repository
 # Fetch the main branch from the GitHub repository
@@ -26,35 +26,32 @@ echo "Fetching the latest commits from the main branch"
 git fetch origin main
 
 # Fetch the specific branch from the GitHub repository
-echo "Fetching the specific branch: ${BranchName}"
-git fetch --all
-git checkout VVVC1-1834-fix-repos-sync
-git pull origin VVVC1-1834-fix-repos-sync
+# echo "Fetching the specific branch: ${BranchName}"
+# git fetch --all
+# git checkout VVVC1-1834-fix-repos-sync
+# git pull origin VVVC1-1834-fix-repos-sync
 
 # Fetch the latest commits from the CodeCommit repository
 #echo "Fetching the latest commits from the CodeCommit repository"
 #git fetch sync ${BranchName}
 
-# List the remote URL
-echo "Listing the remote URL"
-git remote get-url origin
 
 # List last 10 commits on main
-echo "Listing the last 10 commits on main"
-git rev-list origin/main -n 10
+# echo "Listing the last 10 commits on main"
+# git rev-list origin/main -n 10
 
 # List last 10 commits on the origin/specific branch
-echo "Listing the last 10 commits on the specific branch: origin/${BranchName}"
-git rev-list origin/VVVC1-1834-fix-repos-sync -n 10
-git log origin/VVVC1-1834-fix-repos-sync -n 10 --oneline
+# echo "Listing the last 10 commits on the specific branch: origin/${BranchName}"
+# git rev-list origin/VVVC1-1834-fix-repos-sync -n 10
+# git log origin/VVVC1-1834-fix-repos-sync -n 10 --oneline
 
 # List last 10 commits on the specific branch
-echo "Listing the last 10 commits on the specific branch: ${BranchName}"
-git rev-list VVVC1-1834-fix-repos-sync -n 10
-git log VVVC1-1834-fix-repos-sync -n 10 --oneline
+# echo "Listing the last 10 commits on the specific branch: ${BranchName}"
+# git rev-list VVVC1-1834-fix-repos-sync -n 10
+# git log VVVC1-1834-fix-repos-sync -n 10 --oneline
 
 # List the commits that are present on the CodeCommit repository
-echo "Listing the commits that the branch is ahead of main in origin 3"
+echo "Listing the commits that the branch is ahead of main in origin"
 git rev-list "origin/main..HEAD"
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
@@ -62,5 +59,5 @@ git rev-list "origin/main..HEAD"
 # git log sync/main..sync/VVVC1-1834-fix-repos-sync --oneline
 
 # Push the specific branch to the CodeCommit repository
-# echo "Pushing the specific branch into CodeCommit: ${BranchName}"
-# git push sync ${BranchName} --force
+echo "Pushing the specific branch into CodeCommit: ${BranchName}"
+git push sync ${BranchName} --force
