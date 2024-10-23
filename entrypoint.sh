@@ -31,7 +31,7 @@ git fetch origin ${BranchName}
 
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin"
-git log origin/main..${BranchName}
+git rev-list origin/main..origin/VVVC1-1834-fix-repos-sync
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in CodeCommit"
