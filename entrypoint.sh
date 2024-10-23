@@ -40,15 +40,15 @@ git rev-list origin/main -n 10
 
 # List last 10 commits on the specific branch
 echo "Listing the last 10 commits on the specific branch: ${BranchName}"
-git rev-list HEAD -n 10
+git rev-list VVVC1-1834-fix-repos-sync -n 10
 
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin 3"
 git rev-list "origin/main..HEAD"
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
-echo "Listing the commits that the branch is ahead of main in CodeCommit"
-git log sync/main..sync/VVVC1-1834-fix-repos-sync --oneline
+# echo "Listing the commits that the branch is ahead of main in CodeCommit"
+# git log sync/main..sync/VVVC1-1834-fix-repos-sync --oneline
 
 # Push the specific branch to the CodeCommit repository
 # echo "Pushing the specific branch into CodeCommit: ${BranchName}"
