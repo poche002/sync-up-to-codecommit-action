@@ -34,6 +34,14 @@ git checkout ${BranchName}
 #echo "Fetching the latest commits from the CodeCommit repository"
 #git fetch sync ${BranchName}
 
+# List last 10 commits on main
+echo "Listing the last 10 commits on main"
+git rev-list origin/main -n 10
+
+# List last 10 commits on the specific branch
+echo "Listing the last 10 commits on the specific branch: ${BranchName}"
+git rev-list HEAD -n 10
+
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin 3"
 git rev-list "origin/main..HEAD"
