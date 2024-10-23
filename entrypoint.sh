@@ -21,6 +21,10 @@ git remote add sync ${CodeCommitUrl}
 # Push the main branch to the CodeCommit repository
 # git push sync main:main
 
+# Fetch the latest commits from the main branch
+echo "Fetching the latest commits from the main branch"
+git fetch origin main
+
 # Fetch the specific branch from the GitHub repository
 echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
