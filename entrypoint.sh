@@ -29,6 +29,8 @@ git fetch origin ${BranchName}
 #echo "Fetching the latest commits from the CodeCommit repository"
 #git fetch sync ${BranchName}
 
+echo "$(git --version)"
+
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin 2"
 git rev-list "origin/main..origin/VVVC1-1834-fix-repos-sync"
