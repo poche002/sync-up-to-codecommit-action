@@ -30,12 +30,12 @@ echo "Fetching the latest commits from the CodeCommit repository"
 git fetch sync ${BranchName}
 
 # List the commits that are present on the CodeCommit repository
-echo "Listing the commits that are present on the CodeCommit repository"
-git log VVVC1-1834-fix-repos-sync..sync/VVVC1-1834-fix-repos-sync --oneline
+echo "Listing the commits that the branch is ahead of main in origin"
+git log main..VVVC1-1834-fix-repos-sync --oneline
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
-echo "Listing the commits that CodeCommit lacks"
-git log sync/VVVC1-1834-fix-repos-sync..VVVC1-1834-fix-repos-sync --oneline
+echo "Listing the commits that the branch is ahead of main in CodeCommit"
+git log sync/main..sync/VVVC1-1834-fix-repos-sync --oneline
 
 # Push the specific branch to the CodeCommit repository
 # echo "Pushing the specific branch into CodeCommit: ${BranchName}"
