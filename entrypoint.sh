@@ -24,12 +24,11 @@ git remote add sync ${CodeCommitUrl}
 # Fetch the specific branch from the GitHub repository
 echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
+git checkout ${BranchName}
 
 # Fetch the latest commits from the CodeCommit repository
 #echo "Fetching the latest commits from the CodeCommit repository"
 #git fetch sync ${BranchName}
-
-echo "$(git --version)"
 
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin 2"
