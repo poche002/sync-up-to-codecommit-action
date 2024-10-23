@@ -24,8 +24,15 @@ git remote add sync ${CodeCommitUrl}
 # Fetch the specific branch from the GitHub repository
 echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
-git checkout ${BranchName}
+
+# Fetch the latest commits from the CodeCommit repository
+echo "Fetching the latest commits from the CodeCommit repository"
+git fetch sync ${BranchName}
+
+# List the commits that are present on the local branch but not on the CodeCommit repository
+echo "Listing the commits that CodeCommit lacks"
+git log sync/${BranchName}..${BranchName} --oneline
 
 # Push the specific branch to the CodeCommit repository
-echo "Pushing the specific branch into CodeCommit: ${BranchName}"
-git push sync ${BranchName} --force
+# echo "Pushing the specific branch into CodeCommit: ${BranchName}"
+# git push sync ${BranchName} --force
