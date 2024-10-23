@@ -26,8 +26,8 @@ echo "Fetching the specific branch: ${BranchName}"
 git fetch origin ${BranchName}
 
 # Fetch the latest commits from the CodeCommit repository
-echo "Fetching the latest commits from the CodeCommit repository"
-git fetch sync ${BranchName}
+#echo "Fetching the latest commits from the CodeCommit repository"
+#git fetch sync ${BranchName}
 
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin"
