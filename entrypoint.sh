@@ -35,8 +35,8 @@ git checkout ${BranchName}
 #git fetch sync ${BranchName}
 
 # List the commits that are present on the CodeCommit repository
-echo "Listing the commits that the branch is ahead of main in origin 2"
-git rev-list "origin..HEAD"
+echo "Listing the commits that the branch is ahead of main in origin 3"
+git rev-list "origin/main..HEAD"
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in CodeCommit"
