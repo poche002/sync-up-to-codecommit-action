@@ -27,7 +27,7 @@ git fetch origin main
 
 # Fetch the specific branch from the GitHub repository
 echo "Fetching the specific branch: ${BranchName}"
-git fetch origin VVVC1-1834-fix-repos-sync
+git fetch --all
 git checkout VVVC1-1834-fix-repos-sync
 git pull origin VVVC1-1834-fix-repos-sync
 
@@ -46,10 +46,12 @@ git rev-list origin/main -n 10
 # List last 10 commits on the origin/specific branch
 echo "Listing the last 10 commits on the specific branch: origin/${BranchName}"
 git rev-list origin/VVVC1-1834-fix-repos-sync -n 10
+git log origin/VVVC1-1834-fix-repos-sync -n 10 --oneline
 
 # List last 10 commits on the specific branch
 echo "Listing the last 10 commits on the specific branch: ${BranchName}"
 git rev-list VVVC1-1834-fix-repos-sync -n 10
+git log VVVC1-1834-fix-repos-sync -n 10 --oneline
 
 # List the commits that are present on the CodeCommit repository
 echo "Listing the commits that the branch is ahead of main in origin 3"
