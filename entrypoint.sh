@@ -31,7 +31,7 @@ git fetch sync ${BranchName}
 
 # List the commits that are present on the local branch but not on the CodeCommit repository
 echo "Listing the commits that CodeCommit lacks"
-git log sync/${BranchName}..${BranchName} --oneline
+git log sync/${BranchName}..origin/${BranchName} --oneline
 
 # Push the specific branch to the CodeCommit repository
 # echo "Pushing the specific branch into CodeCommit: ${BranchName}"
